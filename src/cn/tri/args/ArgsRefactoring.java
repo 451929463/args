@@ -1,14 +1,13 @@
 package cn.tri.args;
-
 import java.util.Scanner;
 
-public class Args {
-	
+public class ArgsRefactoring {
 	
 	public String inputString() {
 		System.out.println("请输入指令: ");
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
+		System.out.println(checkInputString(str));
 		return checkInputString(str);
 	}
 	
@@ -19,11 +18,11 @@ public class Args {
 		String[] strs = str.split(" ");
 		
 		if(strs.length == 1){
-			//-----1
+			//-----2
 			if(strs[0].equals("-g") || strs[0].equals("-d")){
 				return "-g -d";
 			}
-			//-----1
+			//-----2
 			if(strs[0].equals("l") || strs[0].equals("-l")){
 				return strs[0]+" p 0 d";
 			}
@@ -79,8 +78,6 @@ public class Args {
 					return str;
 				}
 			}
-			
-			
 			//----------------------3
 			if(strs[0].equals("l") || strs[0].equals("-l") ){
 				if(strs[1].equals("p") && isNumberPort(strs[2])){
