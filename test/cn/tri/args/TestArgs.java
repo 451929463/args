@@ -15,10 +15,10 @@ public class TestArgs {
 	public void should_show_InputStringLength_by_1(){
 		assertThat(args.inputString(),is(String.class));
 	}
-	/*@Test
+	@Test
 	public void should_show_InputStringLength_by_2(){
 		assertThat(args.inputString(),startsWith("l p 0 d"));
-	}*/
+	}
 	//3、缺省或错误
 	//
 }

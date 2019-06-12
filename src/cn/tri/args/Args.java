@@ -32,19 +32,27 @@ public class Args {
 		}
 		
 		if(strs.length == 2){
+			if(!strs[0].equals("l") && !strs[0].equals("-l") && !strs[0].equals("p") && !strs[0].equals("d")){
+				return "您的指令有误,请按此格式输入2";
+			}
 			if(strs[0].equals("l") || strs[0].equals("-l")){
 				if(strs[1].equals("p") || strs[1].equals("d")){
 					return strs[0]+" p 0 d";
 				}else{
 					return "您的指令有误,请按此格式输入1";
 				}
-				
-				if(strs[0].equals("p") && strs[0].equals("d")){
-					return "l p 0 d";
-				}else if(strs[1].equals("d")){
-					return ""
-				}
 			}
+				
+			if(strs[0].equals("p") && strs[1].equals("d")){
+				return "l p 0 d";
+			}else if(strs[0].equals("p")){
+				return "l p "+strs[1]+" d";
+			}
+			
+			if(strs[0].equals("d")){
+				return "l p 0 "+strs[0]+" "+strs[1];
+			}
+			
 		}
 		return "";
 	}
