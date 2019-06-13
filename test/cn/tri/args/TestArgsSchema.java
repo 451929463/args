@@ -33,7 +33,7 @@ public class TestArgsSchema {
 	}
 	@Test
 	public void should_show_other_schema(){
-		//assertThat(new ArgsSchema("l p d x").toString(), is("您输入的命令行不能识别,请按“l p ? d ?”结构输入"));
+		assertThat(new ArgsSchema("l p d x").toString(), is("您输入的命令行不能识别,请按“l p ? d ?”结构输入"));
 		assertThat(new ArgsSchema("p d x d d").toString(), is("您输入的命令行不能识别,请按“l p ? d ?”结构输入"));
 		
 	}
@@ -50,6 +50,6 @@ public class TestArgsSchema {
 	@Test
 	public void should_show_p_d_schema(){
 		assertThat(new ArgsSchema("p 50 d ccc50").toString(), is("false p 50 d ccc50"));
-		//assertThat(new ArgsSchema("l d ").toString(), is("您输入的命令行不能识别,请按“l p ? d ?”结构输入"));
+		assertThat(new ArgsSchema("l d ").toString(), is("您输入的命令行不能识别,请按“l p ? d ?”结构输入"));
 	}
 }

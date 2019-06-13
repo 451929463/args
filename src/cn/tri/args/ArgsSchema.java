@@ -69,8 +69,8 @@ public class ArgsSchema {
 		}else{
 			this.message = "您输入的命令行不能识别,请按“l p ? d ?”结构输入";
 		}
-		
 	}
+	
 	private void string_length_5() {
 		if(params[3].equals("d") && !params[1].equals("d")){
 			this.args_d += params[4];
@@ -93,8 +93,9 @@ public class ArgsSchema {
 	private void string_length_4() {
 		if(params[2].equals("d") && !params[0].equals("d")){
 			this.args_d += params[3];
+		}else{
+			this.message = "您输入的命令行不能识别,请按“l p ? d ?”结构输入";
 		}
-		this.message = "您输入的命令行不能识别,请按“l p ? d ?”结构输入";
 	}
 	
 	private boolean isNumber(String str){
