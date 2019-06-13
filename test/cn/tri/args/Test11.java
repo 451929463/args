@@ -7,9 +7,9 @@ import org.junit.Test;
 public class Test11 {
 	@Test
 	public void test1(){
-		//System.out.println(Integer.valueOf("zcv") instanceof Integer);
-		
-		System.out.println(Integer.class);
+			String string = "lcd";
+			System.out.println(String.valueOf(string.charAt(0)).equals("l"));
+			System.out.println(false && false);
 	}
 			
 }

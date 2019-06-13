@@ -8,6 +8,7 @@ public class TestModelAnalyze {
 	@Test
 	public void TestModel_1(){
 		String[] model = {"l","p","Integer","d","String"};
+		assertThat(new ModelAnalyze(model,"-l").toString(), is("-l p 0 d "));
 		assertThat(new ModelAnalyze(model,"l").toString(), is("l p 0 d "));
 		assertThat(new ModelAnalyze(model,"p 0").toString(), is("l p 0 d "));
 		assertThat(new ModelAnalyze(model,"d /user/log").toString(), is("l p 0 d /user/log"));
@@ -20,10 +21,10 @@ public class TestModelAnalyze {
 		assertThat(new ModelAnalyze(model,"p 8080 d /user/log").toString(), is("l p 8080 d /user/log"));
 	}
 	@Test
-	public void TestModel2(){
+	public void TestModel_2(){
 		String[] model = {"-g","List<String>","-d","List<Integer>"};
 		assertThat(new ModelAnalyze(model,"-g aa,bb,cc -d 11,22,33").toString(), is("l -g aa,bb,cc -d 11,22,33"));
-		assertThat(new ModelAnalyze(model,"-g aa,bb,cc -d 11,22,33").toString(), is("l -g aa,bb,cc -d 11,22,33"));
+		assertThat(new ModelAnalyze(model,"-g 11,22,33 -d aa,bb,cc").toString(), is("与模板定义的参数类型不匹配"));
 		
 	}
 }
